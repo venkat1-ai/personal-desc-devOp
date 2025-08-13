@@ -16,3 +16,154 @@
         padding: 20px;
     }
 
+    .container {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        background: linear-gradient(45deg, #ffcc00, #ff0066);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        text-align: center;
+        font-size: 0.95rem;
+        color: #ccc;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #ffcc00;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.95rem;
+        transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 10px #ffcc00;
+    }
+
+    .checkbox-group, .radio-group {
+        margin-bottom: 15px;
+    }
+
+    .checkbox-group label, .radio-group label {
+        font-weight: normal;
+        color: #ddd;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(45deg, #ffcc00, #ff0066);
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: white;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #ffcc00;
+    }
+
+    .terms {
+        font-size: 0.8rem;
+        color: #aaa;
+        text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 500px) {
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>CodeFest 2025</h1>
+    <p>Register now for the ultimate coding challenge! 🖥</p>
+
+    <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label>Event Track</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="track" value="frontend"> Frontend Development</label>
+            <label><input type="checkbox" name="track" value="backend"> Backend Development</label>
+            <label><input type="checkbox" name="track" value="datasci"> Data Science</label>
+            <label><input type="checkbox" name="track" value="ai"> AI & ML</label>
+        </div>
+
+        <label>Skill Level</label>
+        <div class="radio-group">
+            <label><input type="radio" name="level" value="beginner" required> Beginner</label>
+            <label><input type="radio" name="level" value="intermediate"> Intermediate</label>
+            <label><input type="radio" name="level" value="advanced"> Advanced</label>
+        </div>
+
+        <label for="tshirt">T-Shirt Size</label>
+        <select id="tshirt" name="tshirt" required>
+            <option value="">Select Size</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+        </select>
+
+        <label><input type="checkbox" required> I agree to the Terms & Conditions</label>
+
+        <button type="submit" class="btn">Register Now</button>
+        <p class="terms">Your data will only be used for event purposes.</p>
+    </form>
+</div>
+
+</body>
+</html>
